@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MA Design</title>
+<meta name="description" content="MA Design: home, ADU, commercial and theatrical design, plans and permits for the South Bay and Los Angeles County.">
+<link rel="icon" href="images/ma-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  --cream:#F3EAD6; --white:#FFFFFF;
+  --side:#1E1E1E; --side-text:#D9D9D9;
+  --orange:#EDA14A; --black:#1A1A1A; --title:#222222; --text:#555555;
+  --card:#F7F7F7; --rule:#E4E4E4;
+  --side-w:220px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--cream)}
+body{margin:0;font-family:"Poppins",Helvetica,Arial,sans-serif;font-weight:300;font-size:16px;line-height:1.75;color:var(--text);
+  background:var(--cream);
+  background-image:linear-gradient(90deg,var(--cream) 0%,var(--white) 25%,var(--white) 75%,var(--cream) 100%);
+  background-repeat:no-repeat;min-height:100vh}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-weight:500;color:var(--title);margin:0;line-height:1.2}
+h2.sec{color:var(--orange);font-size:30px;margin-bottom:28px}
+h3{font-size:19px}
+p{margin:0}
+p+p{margin-top:14px}
+.btn{display:inline-block;background:var(--black);color:#fff;text-decoration:none;font-weight:400;font-size:15px;padding:6px 14px;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:#000}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+/* sidebar */
+.side{position:fixed;inset:0 auto 0 0;width:var(--side-w);background:var(--side);padding:34px 32px;z-index:10;display:flex;flex-direction:column}
+.side .logo img{width:84px;height:84px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo span{color:#fff;font-size:14px;font-weight:400;letter-spacing:.3em;line-height:1}
+.side nav{margin-top:48px;display:flex;flex-direction:column;gap:8px}
+.side nav a{color:var(--side-text);text-decoration:none;font-size:16px;font-weight:400}
+.side nav a:hover{color:#fff}
+.menu-btn{display:none}
+
+main,footer{margin-left:var(--side-w)}
+.wrap{max-width:900px;margin:0 auto;padding:0 32px}
+section{padding:80px 0}
+
+/* banner */
+.banner{background:var(--orange);color:#fff;text-align:center;padding:7px 16px;font-size:17px;font-weight:400}
+.banner a{color:var(--black);font-weight:500}
+
+/* hero */
+.hero{padding:56px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero-img{width:100%;height:auto}
+.eyebrow{color:var(--orange);font-weight:500;font-size:16px;letter-spacing:.02em}
+.hero h1{font-size:clamp(30px,3.4vw,42px);margin-top:14px}
+.hero .sub{margin-top:14px;font-size:19px;font-weight:400;color:var(--title);line-height:1.5}
+.hero .lede{margin-top:16px}
+.meta{margin-top:26px;display:flex;gap:32px;flex-wrap:wrap}
+.meta b{display:block;font-weight:500;font-size:24px;color:var(--title);line-height:1.2}
+.meta span{font-size:14px}
+.hero .btn{margin-top:28px}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.about-photos{position:relative;padding-bottom:56px}
+.about-photos .sunset{width:100%;height:auto}
+.about-photos .portrait{position:absolute;right:-20px;bottom:0;width:42%;aspect-ratio:1;object-fit:cover;border:6px solid #fff;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.about h3{font-size:22px;margin-bottom:16px}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.grid img{width:100%;aspect-ratio:274/171;object-fit:cover}
+
+/* services cards */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.card{background:var(--card);padding:28px 32px 30px}
+.card p{margin-top:10px}
+.card ul{margin:12px 0 0;padding-left:18px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.step .n{font-size:34px;font-weight:500;color:var(--orange);line-height:1}
+.step h3{margin-top:12px}
+.step p{margin-top:8px;font-size:15px}
+.note{margin-top:36px;padding-top:20px;border-top:1px solid var(--rule)}
+
+/* cities */
+.cities{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:17px;font-weight:400;color:var(--title)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.contact h3{font-size:18px;margin-bottom:8px}
+.contact .v{word-break:break-word}
+.contact .v a{color:var(--orange);text-decoration:none}
+.contact .btn{margin-top:14px}
+
+footer{background:#111;color:#999;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:28px;padding-bottom:28px}
+footer img{width:64px;height:64px}
+
+@media (max-width:900px){
+  :root{--side-w:0px}
+  .side{position:sticky;top:0;width:auto;flex-direction:row;align-items:center;justify-content:space-between;padding:12px 20px}
+  .side .logo img{width:48px;height:48px}
+  .menu-btn{display:block;background:none;border:1px solid #666;color:#fff;font:inherit;font-size:15px;padding:4px 12px;cursor:pointer}
+  .side nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--side);margin:0;padding:12px 20px 18px}
+  .side nav.open{display:flex}
+  .wrap{padding:0 20px}
+  section{padding:56px 0}
+  .hero .wrap,.about{grid-template-columns:1fr;gap:36px}
+  .about-photos .portrait{right:0}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:520px){.grid,.cards,.steps{grid-template-columns:1fr}}
+.tile{position:relative;display:block;padding:0;border:0;background:none;cursor:pointer;overflow:hidden}
+.tile img{width:100%;aspect-ratio:274/171;object-fit:cover;display:block;transition:transform .4s ease}
+.tile:hover img,.tile:focus-visible img{transform:scale(1.04)}
+.tile .count{position:absolute;right:10px;bottom:10px;background:rgba(26,26,26,.75);color:#fff;font-size:12px;letter-spacing:.04em;padding:4px 9px}
+.lb{position:fixed;inset:0;background:#111;display:none;align-items:center;justify-content:center;z-index:100}
+.lb.open{display:flex}
+.lb img{max-width:calc(100vw - 140px);max-height:calc(100vh - 110px);object-fit:contain;user-select:none}
+.lb button{position:absolute;background:none;border:0;color:#fff;cursor:pointer;font-family:inherit;line-height:1;padding:12px}
+.lb .x{top:14px;right:18px;font-size:34px}
+.lb .prev,.lb .next{top:50%;transform:translateY(-50%);font-size:44px}
+.lb .prev{left:14px}.lb .next{right:14px}
+.lb .ctr{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#D9D9D9;font-size:14px;letter-spacing:.08em}
+@media (max-width:700px){.lb img{max-width:100vw;max-height:calc(100vh - 140px)}.lb .prev,.lb .next{top:auto;bottom:6px;transform:none}}
+</style>
+</head>
+<body>
+
+<aside class="side">
+  <a class="logo" href="#top"><img src="images/ma-logo.png" alt="MA"><span>DESIGN</span></a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</aside>
+
+<main id="top">
+<div class="banner">Now booking ADU and remodel projects for 2027. <a href="#contact">Start a project →</a></div>
+
+<div class="hero"><div class="wrap">
+  <img class="hero-img" src="images/hero.jpg" alt="Spanish Colonial home with white stucco, clay tile roof and teal shutters">
+  <div>
+    <div class="eyebrow">Design, plans &amp; permits</div>
+    <h1>Thoughtful…</h1>
+    <p class="sub">home, ADUs, commercial and theatrical designs for the Southern California area endearingly known as The South Bay.</p>
+    <p class="lede">For more than 25 years I've designed homes and guided projects through city approval across Los Angeles County, from the first idea to an approved permit.</p>
+    <div class="meta">
+      <div><b>25+</b><span>years of practice</span></div>
+      <div><b>Lomita, Big Bear &amp; Hermosa Beach</b><span>home base</span></div>
+    </div>
+    <a class="btn" href="#contact">Start a Project</a>
+  </div>
+</div></div>
+
+<section id="about"><div class="wrap about">
+  <div class="about-photos">
+    <img class="sunset" src="images/sunset.jpg" alt="Balcony view of the ocean at sunset">
+    <img class="portrait" src="images/portrait.jpg" alt="Marco Antonio García">
+  </div>
+  <div>
+    <h2 class="sec">About</h2>
+    <h3>Marco Antonio García</h3>
+    <p>I've spent more than 25 years designing homes, additions, and ADUs across the South Bay and greater Los Angeles, and walking them through city plan check until they're approved.</p>
+    <p>I'm also a trained actor and theater director, which is where the theatrical side of my work comes from. Years on stage taught me how a space should feel to the people inside it, and I bring that to every project.</p>
+    <p>My personal affinity of style is Mid-Century Modern: the clean lines and warmth of the tones, the scale, craftsmanship, wonder, and the home feeling—from growing up in one—is what leads me in finding the right design for the project.</p>
+    <p>Many of my clients come back, and some of their children now hire me for their own homes.</p>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2 class="sec">Featured Projects</h2>
+  <div class="grid">
+    <!-- PROJECTS: each tile opens the photos listed for it in the GALLERIES list near the bottom of this file -->
+    <button class="tile" type="button" data-gallery="spanish-living" aria-label="Open project photos (14)"><img src="projects/spanish-living/01.jpg" alt="" loading="lazy"><span class="count">14 photos</span></button>
+    <button class="tile" type="button" data-gallery="spanish-dining" aria-label="Open project photos (6)"><img src="projects/spanish-dining/01.jpg" alt="" loading="lazy"><span class="count">6 photos</span></button>
+    <button class="tile" type="button" data-gallery="spanish-rooms" aria-label="Open project photos (12)"><img src="projects/spanish-rooms/01.jpg" alt="" loading="lazy"><span class="count">12 photos</span></button>
+    <button class="tile" type="button" data-gallery="beach-living" aria-label="Open project photos (11)"><img src="projects/beach-living/01.jpg" alt="" loading="lazy"><span class="count">11 photos</span></button>
+    <button class="tile" type="button" data-gallery="beach-rooms" aria-label="Open project photos (16)"><img src="projects/beach-rooms/01.jpg" alt="" loading="lazy"><span class="count">16 photos</span></button>
+    <button class="tile" type="button" data-gallery="pavichs" aria-label="Open project photos (3)"><img src="projects/pavichs/01.jpg" alt="" loading="lazy"><span class="count">3 photos</span></button>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <h2 class="sec">Services</h2>
+  <p style="margin-bottom:28px">Every project gets the same care: a careful look at what's there, a clear design, and plans the city can approve.</p>
+  <div class="cards">
+    <div class="card"><h3>Residential</h3><p>New homes, additions, second stories, and remodels, designed to fit the lot, the budget, and the city's code.</p>
+      <ul><li>New homes</li><li>Additions</li><li>Remodels</li><li>Kitchens &amp; baths</li></ul></div>
+    <div class="card"><h3>ADUs</h3><p>Accessory dwelling units from site plan to permit, including garage conversions and junior ADUs.</p>
+      <ul><li>Detached</li><li>Attached</li><li>Garage conversions</li><li>JADUs</li></ul></div>
+    <div class="card"><h3>Commercial</h3><p>Tenant improvements and interior alterations for shops, restaurants, and offices, coordinated with licensed professionals where the project calls for them.</p>
+      <ul><li>Tenant improvements</li><li>Interiors</li><li>Restaurants</li><li>Retail</li></ul></div>
+    <div class="card"><h3>Theatrical</h3><p>Set design, stage layouts, and plans for live-performance spaces, by someone who has spent years on stage himself.</p>
+      <ul><li>Set design</li><li>Stage layouts</li><li>Venue plans</li></ul></div>
+  </div>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <h2 class="sec">From First Visit to Permit</h2>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><h3>Site visit</h3><p>I measure what's there and learn how you want to use the space.</p></div>
+    <div class="step"><div class="n">02</div><h3>Design</h3><p>Layouts and options until the plan works for how you live or do business.</p></div>
+    <div class="step"><div class="n">03</div><h3>Complete plans</h3><p>A full set of plans, coordinated with structural engineers.</p></div>
+    <div class="step"><div class="n">04</div><h3>Permits</h3><p>Submittal, plan check corrections, and follow-through until it's approved.</p></div>
+  </div>
+  <p class="note">When a project requires a licensed architect's stamp, I work alongside licensed architects of record and structural engineers, so you have one point of contact from start to finish.</p>
+</div></section>
+
+<section id="cities"><div class="wrap">
+  <h2 class="sec">Where I've Worked</h2>
+  <div class="cities"><span>Lomita</span><span>San Pedro</span><span>Manhattan Beach</span><span>Redondo Beach</span><span>Palos Verdes</span><span>San Marino</span><span>Downey</span><span>Big Bear</span><span>Van Nuys</span><span>Hermosa Beach</span><span>Newport Beach</span><span>Huntington Beach</span><span>Hawaii</span><span>Rolling Hills Estates</span><span>Long Beach</span><span>Hawthorne</span><span>Torrance</span><span>Carson</span><span>Los Angeles</span><span>Burbank</span><span>Altadena</span><span>Pasadena</span><span>Whittier</span></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2 class="sec">Contact</h2>
+  <p style="margin-bottom:32px;max-width:40em">Tell me the address and what you'd like to build. I'll let you know what the city will require and how we'd get there.</p>
+  <div class="contact">
+    <div><h3>Email</h3><div class="v"><a href="mailto:madesignla@gmail.com">madesignla@gmail.com</a></div><button class="btn" type="button" data-copy="madesignla@gmail.com">Copy</button></div>
+    <div><h3>Phone</h3><div class="v"><a href="tel:+13103574686">(310) 357-4686</a></div><button class="btn" type="button" data-copy="(310) 357-4686">Copy</button></div>
+    <div><h3>Home Base</h3><div class="v">Lomita · Big Bear · Hermosa Beach, California</div></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>MA Design · Marco Antonio García</span>
+  <div class="logo"><img src="images/ma-logo.png" alt="MA"><span>DESIGN</span></div>
+</div></footer>
+
+<script>
+document.querySelectorAll('button[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy');
+    var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};
+    try{navigator.clipboard.writeText(t).then(ok,function(){b.textContent=t})}catch(e){b.textContent=t}
+  });
+});
+var mb=document.querySelector('.menu-btn'),nv=document.getElementById('nav');
+mb.addEventListener('click',function(){var o=nv.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+nv.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nv.classList.remove('open');mb.setAttribute('aria-expanded','false')})});
+</script>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project photos">
+  <button class="x" type="button" aria-label="Close">&times;</button>
+  <button class="prev" type="button" aria-label="Previous photo">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="next" type="button" aria-label="Next photo">&#8250;</button>
+  <div class="ctr" id="lbCtr"></div>
+</div>
+<script>
+/* GALLERIES: to add a photo, put it in that project's folder and add its path to the list */
+var GALLERIES = {
+ "spanish-living": [
+  "projects/spanish-living/01.jpg",
+  "projects/spanish-living/02.jpg",
+  "projects/spanish-living/03.jpg",
+  "projects/spanish-living/04.jpg",
+  "projects/spanish-living/05.jpg",
+  "projects/spanish-living/06.jpg",
+  "projects/spanish-living/07.jpg",
+  "projects/spanish-living/08.jpg",
+  "projects/spanish-living/09.jpg",
+  "projects/spanish-living/10.jpg",
+  "projects/spanish-living/11.jpg",
+  "projects/spanish-living/12.jpg",
+  "projects/spanish-living/13.jpg",
+  "images/hero.jpg"
+ ],
+ "spanish-dining": [
+  "projects/spanish-dining/01.jpg",
+  "projects/spanish-dining/02.jpg",
+  "projects/spanish-dining/03.jpg",
+  "projects/spanish-dining/04.jpg",
+  "projects/spanish-dining/05.jpg",
+  "projects/spanish-dining/06.jpg"
+ ],
+ "spanish-rooms": [
+  "projects/spanish-rooms/01.jpg",
+  "projects/spanish-rooms/02.jpg",
+  "projects/spanish-rooms/03.jpg",
+  "projects/spanish-rooms/04.jpg",
+  "projects/spanish-rooms/05.jpg",
+  "projects/spanish-rooms/06.jpg",
+  "projects/spanish-rooms/07.jpg",
+  "projects/spanish-rooms/08.jpg",
+  "projects/spanish-rooms/09.jpg",
+  "projects/spanish-rooms/10.jpg",
+  "projects/spanish-rooms/11.jpg",
+  "projects/spanish-rooms/12.jpg"
+ ],
+ "beach-living": [
+  "projects/beach-living/01.jpg",
+  "projects/beach-living/02.jpg",
+  "projects/beach-living/03.jpg",
+  "projects/beach-living/04.jpg",
+  "projects/beach-living/05.jpg",
+  "projects/beach-living/06.jpg",
+  "projects/beach-living/07.jpg",
+  "projects/beach-living/08.jpg",
+  "projects/beach-living/09.jpg",
+  "projects/beach-living/10.jpg",
+  "projects/beach-living/11.jpg"
+ ],
+ "beach-rooms": [
+  "projects/beach-rooms/01.jpg",
+  "projects/beach-rooms/02.jpg",
+  "projects/beach-rooms/03.jpg",
+  "projects/beach-rooms/04.jpg",
+  "projects/beach-rooms/05.jpg",
+  "projects/beach-rooms/06.jpg",
+  "projects/beach-rooms/07.jpg",
+  "projects/beach-rooms/08.jpg",
+  "projects/beach-rooms/09.jpg",
+  "projects/beach-rooms/10.jpg",
+  "projects/beach-rooms/11.jpg",
+  "projects/beach-rooms/12.jpg",
+  "projects/beach-rooms/13.jpg",
+  "projects/beach-rooms/14.jpg",
+  "projects/beach-rooms/15.jpg",
+  "projects/beach-rooms/16.jpg"
+ ],
+ "pavichs": [
+  "projects/pavichs/01.jpg",
+  "projects/pavichs/02.jpg",
+  "projects/pavichs/03.jpg"
+ ]
+};
+(function(){
+  var lb=document.getElementById('lb'),img=document.getElementById('lbImg'),ctr=document.getElementById('lbCtr'),list=[],i=0,last=null,sx=null;
+  function show(){img.src=list[i];ctr.textContent=(i+1)+' / '+list.length;var n=new Image();n.src=list[(i+1)%list.length];}
+  function open(k,btn){list=GALLERIES[k]||[];if(!list.length)return;i=0;last=btn;show();lb.classList.add('open');document.body.style.overflow='hidden';lb.querySelector('.x').focus();}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';img.src='';if(last)last.focus();}
+  function step(d){i=(i+d+list.length)%list.length;show();}
+  document.querySelectorAll('.tile').forEach(function(b){b.addEventListener('click',function(){open(b.getAttribute('data-gallery'),b);});});
+  lb.querySelector('.x').addEventListener('click',close);
+  lb.querySelector('.prev').addEventListener('click',function(){step(-1);});
+  lb.querySelector('.next').addEventListener('click',function(){step(1);});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);});
+  lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)step(dx<0?1:-1);sx=null;});
+})();
+</script>
+</body>
+</html>
